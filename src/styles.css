@@ -6,36 +6,15 @@
   --breakout-max-width: 1160px;
 
   --main-color: #fcd1de;
-  --main-darkened-color: #caa7b2;
+  --main-darkened-color: #977d85;
   --white-color: #feeeef;
   --black-color: #262626;
+  --gold-color: #c9a227;
 
   --font-sans-serif: system-ui, -apple-system, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-montserrat: 'Montserrat', 'Montserrat Fallback';
-}
-
-@supports (font-size: clamp(1rem, 1vi, 1rem)) {
-  :root {
-    --font-size-sm: clamp(0.7rem, 0.01vi + 0.7rem, 0.7rem);
-    --font-size-base: clamp(0.88rem, 0.13vi + 0.84rem, 0.94rem);
-    --font-size-md: clamp(1.09rem, 0.31vi + 1.02rem, 1.25rem);
-  }
-}
-@supports not (font-size: clamp(1rem, 1vi, 1rem)) {
-  :root {
-    --font-size-sm: 0.7rem;
-    --font-size-base: 0.88rem;
-    --font-size-md: 1.09rem;
-  }
-  @media screen and (min-width: 1200px) {
-    :root {
-      --font-size-sm: 0.7rem;
-      --font-size-base: 0.94rem;
-      --font-size-md: 1.25rem;
-    }
-  }
 }
 
 *,
@@ -65,7 +44,7 @@ button:focus-visible {
 }
 
 html {
-  font-size: var(--font-size-base);
+  font-size: 14px;
   line-height: 1.15;
 
   -webkit-text-size-adjust: 100%;
@@ -140,7 +119,7 @@ button {
   font-size: 100%;
   line-height: 1.15;
 
-  -webkit-appearance: button;
+  appearance: button;
 }
 
 button::-moz-focus-inner {
@@ -150,6 +129,14 @@ button::-moz-focus-inner {
 
 button:-moz-focusring {
   outline: 1px dotted ButtonText;
+}
+
+#scroll-top {
+  position: fixed;
+  inset-block-end: 20px;
+  inset-inline-end: 20px;
+
+  padding: 0.75rem;
 }
 
 p {
@@ -369,13 +356,18 @@ h6 {
   margin-bottom: 1.5rem;
 
   font-size: 14px;
-  color: var(--main-darkened-color);
+  /* color: var(--main-darkened-color); */
+  color: var(--gold-color);
 }
 
 footer .container:first-of-type {
   padding-top: 5rem;
 
   background-color: var(--main-color);
+}
+
+footer h2 {
+  color: var(--main-darkened-color);
 }
 
 footer .container:last-of-type {
@@ -386,4 +378,169 @@ footer .container:last-of-type {
 footer .container:first-of-type + svg {
   color: var(--main-color);
   transform: rotateX(180deg);
+}
+footer .grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 4rem;
+
+  padding-bottom: 1rem;
+
+  width: 100%;
+}
+
+.grid .col {
+  flex: 0 1 0;
+  flex-basis: 100%;
+  min-width: 300px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 576px) {
+  .grid .col {
+    flex-basis: calc(33.333% - 4rem);
+  }
+}
+
+address {
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.email {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 2;
+}
+
+.telephone {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 2;
+}
+
+.with-tooth-background {
+  position: relative;
+
+  display: flex;
+
+  min-height: 300px;
+}
+
+.with-tooth-background .content {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 20%;
+  margin: 0 auto;
+
+  z-index: 2;
+}
+
+@media (min-width: 576px) {
+  .with-tooth-background .content {
+    width: 35%;
+  }
+}
+
+.with-tooth-background .content p {
+  margin-bottom: 0.25rem;
+
+  font-weight: 500;
+}
+
+.tooth-shape {
+  position: absolute;
+  inset: 0;
+
+  text-align: center;
+  width: 100%;
+  background: linear-gradient(to bottom, #feeeef, #feeeef);
+  mask-image: url('/public/footer-tooth.svg');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+  z-index: 1;
+}
+
+footer .links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  padding-top: 1rem;
+}
+
+@media (min-width: 992px) {
+  footer .links {
+    align-items: flex-start;
+
+    padding-left: 4rem;
+  }
+}
+
+footer .button {
+  padding: 1rem 2rem;
+
+  width: fit-content;
+
+  font-weight: 600;
+}
+
+footer .button--text {
+  color: var(--main-darkened-color);
+  background-color: var(--white-color);
+  border-color: var(--white-color);
+}
+
+footer .button--text.button--inverted {
+  color: var(--main-darkened-color);
+  background-color: var(--main-color);
+  border-color: var(--white-color);
+}
+
+footer .button--text:hover {
+  background-color: var(--main-color);
+}
+
+footer .button--text.button--inverted:hover {
+  background-color: var(--white-color);
+}
+
+footer .socials {
+  display: flex;
+  margin-top: auto;
+  align-items: center;
+  gap: 1rem;
+
+  padding-top: 1rem;
+}
+
+.socials h3 {
+  margin-bottom: 0;
+
+  color: var(--main-darkened-color);
+}
+
+.socials a {
+  padding: 1rem;
+
+  background-color: rgba(151, 125, 133, 0.2);
+  border-radius: 50%;
+
+  color: var(--main-darkened-color);
+
+  transition: background-color 0.4s ease;
+  will-change: background-color;
+}
+
+.socials a:hover {
+  background-color: rgba(151, 125, 133, 0.3);
 }

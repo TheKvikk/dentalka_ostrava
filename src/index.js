@@ -6,3 +6,12 @@ window.addEventListener('scroll', () => {
 		header.classList.remove('header--scrolled');
 	}
 });
+
+window.addEventListener('scroll', () => {
+	const scrollTopButton = document.getElementById('scroll-top')
+	if (window.scrollY > 200) {
+		scrollTopButton.style.opacity = 1;
+	} else {
+		scrollTopButton.style.opacity = 0;
+	}
+});

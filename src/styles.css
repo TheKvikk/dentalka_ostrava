@@ -198,7 +198,7 @@ p {
 
 .solid-background svg {
   position: absolute;
-  bottom: -6rem;
+  bottom: -80px;
 
   color: var(--main-color);
 
@@ -231,7 +231,7 @@ a {
 
   backdrop-filter: blur(10px);
 
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .header__layout {
@@ -316,8 +316,6 @@ nav a:not(.button):hover::before {
 }
 
 section {
-  height: 1000px;
-
   padding-top: 80px;
 }
 
@@ -360,6 +358,34 @@ h6 {
   color: var(--gold-color);
 }
 
+.introduction-wrapper {
+}
+
+.introduction {
+  padding: 7rem;
+
+  width: 100%;
+
+  background-color: var(--main-color);
+  border-bottom-left-radius: 6rem;
+}
+
+@media (min-width: 768px) {
+  .introduction {
+    width: 80%;
+  }
+}
+
+.introduction h2,
+.introduction h6,
+.introduction p {
+  max-width: 350px;
+}
+
+.introduction .button {
+  margin-top: 2rem;
+}
+
 footer .container:first-of-type {
   padding-top: 5rem;
 
@@ -379,6 +405,7 @@ footer .container:first-of-type + svg {
   color: var(--main-color);
   transform: rotateX(180deg);
 }
+
 footer .grid {
   display: flex;
   flex-wrap: wrap;

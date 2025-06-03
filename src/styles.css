@@ -2,8 +2,8 @@
 
 :root {
   --padding-inline: 1rem;
-  --content-max-width: 900px;
-  --breakout-max-width: 1200px;
+  --content-max-width: 940px;
+  --breakout-max-width: 1160px;
 
   --main-color: #fcd1de;
   --main-darkened-color: #caa7b2;
@@ -65,6 +65,7 @@ button:focus-visible {
 }
 
 html {
+  font-size: var(--font-size-base);
   line-height: 1.15;
 
   -webkit-text-size-adjust: 100%;
@@ -83,7 +84,7 @@ body {
 
   color: var(--black-color);
   font-family: var(--font-montserrat), var(--font-sans-serif);
-  font-size: var(--font-size-base);
+
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
@@ -95,13 +96,20 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-main {
-  display: block;
+hr {
+  box-sizing: content-box;
+
+  margin-block: 1rem;
+
+  height: 0;
+
+  color: rgba(112, 112, 112, 0.16);
+
+  overflow: visible;
 }
 
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+main {
+  display: block;
 }
 
 a {
@@ -149,6 +157,18 @@ p {
   margin-bottom: 1rem;
 }
 
+.main-color {
+  color: var(--main-color);
+}
+
+.main-darkened-color {
+  color: var(--main-darkened-color);
+}
+
+.semi-bold {
+  font-weight: 600;
+}
+
 .container {
   --breakout-size: calc(
     (var(--breakout-max-width) - var(--content-max-width)) / 2
@@ -183,6 +203,21 @@ p {
   grid-template-columns: inherit;
 }
 
+.solid-background {
+  position: relative;
+
+  background-color: var(--main-color);
+}
+
+.solid-background svg {
+  position: absolute;
+  bottom: -6rem;
+
+  color: var(--main-color);
+
+  transform: rotateX(180deg);
+}
+
 a {
   color: var(--black-color);
   text-decoration: none;
@@ -190,25 +225,10 @@ a {
   cursor: pointer;
 }
 
-a.button {
-  display: inline-block;
-  padding: 0.5em 1em;
-  background: #0070f3;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background 0.2s ease;
-}
-
-a.button:hover,
-a.button:focus {
-  background: #0051c3;
-}
-
 .header {
   position: sticky;
   top: 0;
+  z-index: 10;
 
   padding-block: 1rem;
 
@@ -244,6 +264,34 @@ nav ul {
   list-style: none;
 }
 
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.5rem 0.75rem;
+
+  border: 2px solid var(--main-darkened-color);
+  background-color: var(--main-darkened-color);
+  border-radius: 2rem;
+
+  color: var(--white-color);
+  font-size: 1rem;
+  font-feature-settings: inherit;
+
+  transition: background 0.4s, color 0.4s, border-color 0.4s;
+
+  cursor: pointer;
+  user-select: none;
+  outline-color: transparent;
+}
+
+.button:hover {
+  background-color: transparent;
+
+  color: var(--main-darkened-color);
+}
+
 nav a:not(.button) {
   position: relative;
 
@@ -251,10 +299,12 @@ nav a:not(.button) {
 
   padding-inline: 0.2rem;
 
+  transition: color 0.3s ease;
+}
+
+nav a {
   font-weight: 500;
   text-transform: uppercase;
-
-  transition: color 0.3s ease;
 }
 
 nav a:not(.button)::before {
@@ -280,4 +330,60 @@ nav a:not(.button):hover::before {
 
 section {
   height: 1000px;
+
+  padding-top: 80px;
+}
+
+section:has(+ section) {
+  margin-bottom: 8rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--black-color);
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+h3 {
+  font-size: 1.375rem;
+}
+h4 {
+  font-size: 1.25rem;
+}
+h5 {
+  font-size: 1.125rem;
+}
+
+h6 {
+  margin-bottom: 1.5rem;
+
+  font-size: 14px;
+  color: var(--main-darkened-color);
+}
+
+footer .container:first-of-type {
+  padding-top: 5rem;
+
+  background-color: var(--main-color);
+}
+
+footer .container:last-of-type {
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+
+footer .container:first-of-type + svg {
+  color: var(--main-color);
+  transform: rotateX(180deg);
 }

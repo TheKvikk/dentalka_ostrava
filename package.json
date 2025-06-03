@@ -1,12 +1,14 @@
 {
   "name": "dentalka_ostrava",
+  "homepage": "https://thekvikk.github.io/dentalka_ostrava",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "bash scripts/deploy.sh"
   },
   "repository": {
     "type": "git",

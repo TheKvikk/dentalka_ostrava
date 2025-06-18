@@ -10,6 +10,6 @@ function copyrightYearPlugin() {
 }
 
 export default defineConfig({
-  base: '/dentalka_ostrava/',
+  base: process.env.NODE_ENV === 'production' ? '/dentalka_ostrava/' : '/',
   plugins: [copyrightYearPlugin()],
 });

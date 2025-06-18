@@ -65,3 +65,13 @@ function toggleItem(item, toOpen) {
 		content.style.maxHeight = '0';
 	}
 }
+
+document.querySelectorAll('nav a:not(.button)').forEach(link => {
+	link.addEventListener('click', () => {
+		const nav = document.querySelector('nav');
+
+		if (nav.classList.contains('opened')) {
+			nav.classList.remove('opened');
+		}
+	})
+})

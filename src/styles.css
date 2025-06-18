@@ -648,8 +648,15 @@ h6 {
 
 .pricing-service {
   display: flex;
+  flex-direction: column;
 
   padding-block: 1rem;
+}
+
+@media (min-width: 768px) {
+  .pricing-service {
+    flex-direction: row;
+  }
 }
 
 .pricing-service:first-of-type {
@@ -666,18 +673,22 @@ h6 {
   border-bottom: 1px solid rgba(112, 112, 112, 0.16);
 }
 
-.pricing-service .column:nth-of-type(1) {
-  width: 60%;
-}
-
 .pricing-service .column:nth-of-type(1) p:last-of-type {
   margin-bottom: 0;
 }
 
 .pricing-service .column:nth-of-type(2) {
-  width: 40%;
-
   text-align: right;
+}
+
+@media (min-width: 768px) {
+  .pricing-service .column:nth-of-type(1) {
+    width: 60%;
+  }
+
+  .pricing-service .column:nth-of-type(2) {
+    width: 40%;
+  }
 }
 
 .pricing-service p {
@@ -690,9 +701,17 @@ h6 {
 }
 
 .pricing-service .price {
+  margin-top: 2rem;
+
   font-size: 1rem;
   font-weight: bold;
   color: var(--quartary-color);
+}
+
+@media (min-width: 768px) {
+  .pricing-service .price {
+    margin-top: 0;
+  }
 }
 
 .pricing-service .price span {
@@ -727,6 +746,9 @@ h6 {
 
   border-width: 0;
   background-color: transparent;
+
+  color: var(--black-color);
+  text-align: left;
 
   cursor: pointer;
 }

@@ -991,13 +991,13 @@ address {
 
 .email {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 2;
 }
 
 .telephone {
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 2;
 }
 
@@ -1072,40 +1072,13 @@ footer .button--text.button--inverted:hover {
   background-color: var(--white-color);
 }
 
-footer .socials {
-  display: flex;
-  margin-top: auto;
-  align-items: center;
-  gap: 1rem;
-
-  padding-top: 1rem;
-}
-
 footer .section-ending-bottom {
   color: var(--white-color);
   transform: rotateY(180deg);
 }
 
-.socials h3 {
-  margin-bottom: 0;
-
-  color: var(--quartary-color);
-}
-
 .socials a {
-  padding: 1rem;
-
-  background-color: rgba(151, 125, 133, 0.2);
-  border-radius: 50%;
-
   color: var(--quartary-color);
-
-  transition: background-color 0.4s ease;
-  will-change: background-color;
-}
-
-.socials a:hover {
-  background-color: rgba(151, 125, 133, 0.3);
 }
 
 .tin,
@@ -1118,14 +1091,41 @@ footer .section-ending-bottom {
 }
 
 .map {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   margin-block: -40px;
 }
 
 .map img {
   height: 500px;
-  min-width: 1920px;
   width: 100%;
   max-width: 100%;
   object-fit: cover;
   object-position: center center;
+}
+
+.scroll-target {
+  scroll-margin-top: calc(100px + 1rem);
+}
+
+#map-marker {
+  position: absolute;
+  top: 105px;
+  display: flex;
+  justify-content: flex-end;
+  width: 108px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #map-marker svg {
+    transition-duration: 0.5s;
+  }
+}
+
+#map-marker:hover svg {
+  transform: scale(1.1, 1.1);
 }

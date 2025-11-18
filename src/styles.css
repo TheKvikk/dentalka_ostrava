@@ -518,7 +518,7 @@ h6 {
     height: calc(100% - 80px);
 
     border-bottom-left-radius: 0;
-    background-size: initial;
+    background-size: 100%;
   }
 }
 
@@ -557,8 +557,7 @@ h6 {
 
   position: absolute;
   top: -25px;
-  left: 0px;
-  right: 0px;
+  left: -16px;
   z-index: -1;
 
   margin-inline: auto;

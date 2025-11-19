@@ -557,7 +557,7 @@ h6 {
 
   position: absolute;
   top: -25px;
-  left: -16px;
+  left: 50%;
   z-index: -1;
 
   margin-inline: auto;
@@ -567,6 +567,8 @@ h6 {
 
   background-image: url('/tooth.svg');
   background-size: 140px 120px;
+
+  transform: translateX(-50%);
 }
 
 .section-description.light-background .h6::before {
@@ -1127,4 +1129,31 @@ footer .section-ending-bottom {
 
 #map-marker:hover svg {
   transform: scale(1.1, 1.1);
+}
+
+.client-reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: 1rem;
+}
+
+.client-review:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.client-review:nth-of-type(2) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.client-review:nth-of-type(3) {
+  grid-row: span 2;
+}
+
+.client-review {
+  padding: 1rem;
+
+  background-color: rgba(254, 238, 239, 0.5);
+  border-radius: 1rem;
 }

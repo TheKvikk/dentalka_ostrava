@@ -16,6 +16,10 @@
     'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-montserrat: 'Montserrat', 'Montserrat Fallback';
+
+  --box-shadow: 0 2px 2px -1px #0701130a, 0 1px 1px -0.5px #0701130a,
+    0 0.5px 0.5px #0701130a, inset 0 2px 8px #ffffff0d,
+    inset 0 1px 3px #ffffff1f, inset 0 0.5px 0.5px #ffffff29;
 }
 
 *,
@@ -508,7 +512,7 @@ h6 {
   .introduction__image {
     position: absolute;
     top: 40px;
-    right: -25%;
+    right: -10%;
 
     margin-top: 0;
 
@@ -854,6 +858,7 @@ h6 {
 
   background-color: var(--primary-color);
   border-radius: 1rem;
+  box-shadow: var(--box-shadow);
 }
 
 .accordion button {
@@ -965,7 +970,7 @@ footer .grid {
   justify-content: center;
   gap: 4rem;
 
-  padding-bottom: 1rem;
+  padding-bottom: 3rem;
 
   width: 100%;
 }
@@ -1012,6 +1017,7 @@ address {
 
   background-color: rgba(254, 238, 239, 0.5);
   border-radius: 10px 70px 10px 70px;
+  box-shadow: var(--box-shadow);
 }
 
 .business-hours .content {
@@ -1156,4 +1162,51 @@ footer .section-ending-bottom {
 
   background-color: rgba(254, 238, 239, 0.5);
   border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+
+  text-decoration: none;
+}
+
+.client-review span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+.client-review span::before {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  content: attr(data-letter);
+
+  width: 2.5rem;
+  height: 2.5rem;
+
+  background-color: var(--primary-color);
+  border-radius: 50%;
+
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.client-review .stars {
+  display: flex;
+  gap: 0.25rem;
+
+  margin-block: 1rem;
+
+  color: var(--secondary-color);
+}
+
+.client-review p {
+  font-style: italic;
+}
+
+.client-review p:last-of-type {
+  margin-bottom: 0;
 }

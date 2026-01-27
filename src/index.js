@@ -76,18 +76,5 @@ document.querySelectorAll('nav a:not(.button)').forEach(link => {
 	})
 })
 
-async function getInstagramPosts() {
-	const accessToken = "IGAB8h8vYqLmhBZAFNwUGFSSWJJeXUwOEtZAanJsWTNOUHNUaGdnZAHVienZAZATDlHa1JCVTdWb2NqV2w5blVVTzFKamtGUlQ4TXlLYVRvRUktcU14YnlfY3R5TjU1MzU3LVc4S3BlaXNmZAjNFemtkZAFRPcGRMMWg1UjVTaTNEOWszNAZDZD";
-	const params = new URLSearchParams({
-		fields: "id,media_type,media_url,thumbnail_url,timestamp,caption,permalink",
-		access_token: accessToken,
-		limit: "12",
-	});
-	const response = await fetch(`https://graph.instagram.com/me/media?${params}`,
-		{
-			method: 'GET',
-		})
-	const result = await response.json();
-}
-
-getInstagramPosts();
+const trademark = document.querySelector('.trademark');
+trademark.innerHTML = trademark.innerHTML.replace('__YEAR__', new Date().getFullYear().toString())

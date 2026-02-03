@@ -10,7 +10,7 @@ rm -rf $DEPLOY_DIR
 
 # Build the project (on current branch, e.g., master)
 echo "🛠 Building project..."
-npm run build
+PROD_ENV=gh-pages npm run build
 
 # Prepare worktree for gh-pages
 echo "🔀 Creating worktree for $BRANCH..."

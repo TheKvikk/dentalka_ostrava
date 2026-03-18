@@ -1,8 +1,8 @@
 {
   "name": "dentalka_ostrava",
-  "homepage": "https://thekvikk.github.io/dentalka_ostrava",
+  "homepage": "https://dentalka.github.io/dentalka_ostrava/",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://TheKvikk@github.com/TheKvikk/dentalka_ostrava.git"
+    "url": "git+https://TheKvikk@github.com/Dentalka/dentalka_ostrava.git"
   },
   "dependencies": {
     "vite": "^6.3.5"
